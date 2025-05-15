@@ -22,7 +22,7 @@
             "required": true
           },
           {
-            "id": "nickname",
+            "id": "Nickname",
             "type": "text",
             "name": "Nickname",
             "width": 2,
@@ -34,14 +34,6 @@
             "name": "Location",
             "url": "/location",
             "form": "LocationForm",
-            "width": 2
-          },
-          {
-            "id": "group",
-            "type": "autocomplete",
-            "name": "Group",
-            "url": "/group",
-            "form": "GroupForm",
             "width": 2
           },
           {
@@ -101,7 +93,7 @@
       {
         "id": "GroupForm",
         "title": "Group",
-        "url": "/group",
+        "url": "/Group",
         "formFieldList": [
           {
             "id": "name",
@@ -176,9 +168,9 @@
           {
             "type": "button",
             "name": "Group",
-            "icon": "fa-weixin",
-            "color": "wisteria",
-            "page": "groupspage"
+            "icon": "fa-wheelchair",
+            "color": "teal",
+            "page": "grouppage"
           }
         ]
       },
@@ -238,7 +230,7 @@
         ]
       },
       {
-        "id": "groupspage",
+        "id": "grouppage",
         "elementList": [
           {
             "type": "backbutton"
@@ -246,20 +238,107 @@
           {
             "type": "newButton",
             "name": "NewGroup",
-            "icon": "fa-weixin",
-            "color": "green",
+            "icon": "fa-wheelchair",
+            "color": "teal",
             "form": {
               "form": "GroupForm"
             }
           },
           {
             "type": "list",
-            "icon": "fa-weixin",
-            "color": "wisteria",
+            "icon": "fa-user",
+            "color": "blue",
             "search": true,
             "url": "/group",
             "form": {
               "form": "GroupForm"
+            }
+          }
+        ]
+      },
+      {
+        "id": "friendactivitiespage",
+        "elementList": [
+          {
+            "type": "backbutton"
+          },
+          {
+            "type": "formButton",
+            "name": "Friend",
+            "icon": "fa-user",
+            "color": "blue",
+            "form": {
+              "form": "FriendForm"
+            }
+          },
+          {
+            "type": "newButton",
+            "name": "AddActivity",
+            "icon": "fa-bolt",
+            "color": "green",
+            "form": {
+              "form": "AddActivityForm"
+            }
+          },
+          {
+            "type": "list",
+            "icon": "fa-bolt",
+            "color": "orange",
+            "url": "/friend/:friendKey/activity",
+            "form": {
+              "form": "ActivityForm"
+            }
+          }
+        ]
+      },
+      {
+        "id": "activityfriendspage",
+        "elementList": [
+          {
+            "type": "backbutton"
+          },
+          {
+            "type": "formButton",
+            "name": "Activity",
+            "icon": "fa-bolt",
+            "color": "orange",
+            "form": {
+              "form": "ActivityForm"
+            }
+          },
+          {
+            "type": "list",
+            "icon": "fa-user",
+            "color": "blue",
+            "url": "/activity/:activityKey/friend",
+            "form": {
+              "form": "FriendForm"
+            }
+          }
+        ]
+      },
+      {
+        "id": "locationactivitiespage",
+        "elementList": [
+          {
+            "type": "backbutton"
+          },
+          {
+            "type": "formButton",
+            "name": "Location",
+            "icon": "fa-home",
+            "color": "yellow",
+            "form": {
+              "form": "LocationForm"
+            }
+          },
+          {
+            "type": "list",
+            "icon": "fa-bolt",
+            "color": "orange",
+            "url": "/location/:locationKey/activity",
+            "form": {
+              "form": "ActivityForm"
             }
           }
         ]
